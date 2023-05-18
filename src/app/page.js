@@ -14,8 +14,6 @@ export default function Home() {
   const [step, setStep] = useState(0);
   const [answers, setAnswer] = useState([])
 
-  console.log({ answers })
-
   const handleNextStep = (maxSteps) => {
     if (step === mockQuestions.length) return;
     setStep(step + 1)
@@ -46,10 +44,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen h-full flex-col items-center pt-7 bg-[url('/bg.jpeg')] bg-cover">
       {step === mockQuestions.length ?
-        <div className="text-black bg-white shadow-rose-400 shadow-2xl p-4 flex-col justify-center items-center">
+        <div className="text-black bg-white shadow-rose-400 shadow-2xl p-6 flex-col justify-center items-center">
           <p>Here are your results:</p>
           {answers.map(item =>
-            <li className="flex-col" key={item.id}>
+            <li className="flex-col mb-4" key={item.id}>
               <p >Question: {item.question.text}</p>
               <p >Answer: {item.answer.text}</p>
             </li>
